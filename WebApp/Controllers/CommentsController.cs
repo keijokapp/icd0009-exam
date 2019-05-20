@@ -69,6 +69,13 @@ namespace WebApp.Controllers
             return View(comment);
         }
 
+        public async Task<IActionResult> CreateForBook(int bookId)
+        {
+            ViewData["book"] = await _context.Books.SingleAsync(b => b.Id == bookId);
+            
+            return View();
+        }
+
         // GET: Comments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

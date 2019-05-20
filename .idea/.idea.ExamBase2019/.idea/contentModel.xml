@@ -95,6 +95,7 @@
           <e p="PublishersController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="BookCreateVM.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -135,6 +136,7 @@
           </e>
           <e p="Comments" t="Include">
             <e p="Create.cshtml" t="Include" />
+            <e p="CreateForBook.cshtml" t="Include" />
             <e p="Delete.cshtml" t="Include" />
             <e p="Details.cshtml" t="Include" />
             <e p="Edit.cshtml" t="Include" />
