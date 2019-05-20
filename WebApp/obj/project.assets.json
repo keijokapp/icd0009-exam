@@ -2,6 +2,45 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "ee.itcollege.akaver.Contracts.DAL.Base/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/ee.itcollege.akaver.Contracts.DAL.Base.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ee.itcollege.akaver.Contracts.DAL.Base.dll": {}
+        }
+      },
+      "ee.itcollege.akaver.DAL.Base.EF/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "8.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.4",
+          "ee.itcollege.akaver.Contracts.DAL.Base": "1.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/ee.itcollege.akaver.DAL.Base.EF.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ee.itcollege.akaver.DAL.Base.EF.dll": {}
+        }
+      },
       "Microsoft.AspNetCore/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1135,6 +1174,18 @@
         },
         "build": {
           "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/2.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/2.2.4": {
@@ -2632,7 +2683,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -2646,7 +2697,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -3368,10 +3419,95 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Contracts.DAL.App/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "ee.itcollege.akaver.Contracts.DAL.Base": "1.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Contracts.DAL.App.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.DAL.App.dll": {}
+        }
+      },
+      "DAL.App.EF/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Contracts.DAL.App": "1.0.0",
+          "Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "ee.itcollege.akaver.DAL.Base.EF": "1.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DAL.App.EF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.App.EF.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "ee.itcollege.akaver.Contracts.DAL.Base": "1.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/8.0.0": {
+      "sha512": "kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
+      "type": "package",
+      "path": "automapper/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "ee.itcollege.akaver.Contracts.DAL.Base/1.0.3": {
+      "sha512": "Y2ANXl22QBegapb2COBRRhDs8qzVKCKrxkdYwFnXEJFpJWjyd9OkGmeulnLfJxghwG10lKiZzfsbpDy/ioKQPg==",
+      "type": "package",
+      "path": "ee.itcollege.akaver.contracts.dal.base/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ee.itcollege.akaver.contracts.dal.base.1.0.3.nupkg.sha512",
+        "ee.itcollege.akaver.contracts.dal.base.nuspec",
+        "lib/netstandard2.0/ee.itcollege.akaver.Contracts.DAL.Base.dll"
+      ]
+    },
+    "ee.itcollege.akaver.DAL.Base.EF/1.0.3": {
+      "sha512": "yEj1ZhQuB1/4MDN179da9y1zibbrtcbXT5UsFpDRoAIWCQ05EnvMR/GYd6Tkn8lUqWq2SgzG3pXjjL23V42QZw==",
+      "type": "package",
+      "path": "ee.itcollege.akaver.dal.base.ef/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ee.itcollege.akaver.dal.base.ef.1.0.3.nupkg.sha512",
+        "ee.itcollege.akaver.dal.base.ef.nuspec",
+        "lib/netstandard2.0/ee.itcollege.akaver.DAL.Base.EF.dll"
+      ]
+    },
     "Microsoft.AspNetCore/2.2.0": {
       "sha512": "Bs75iht4lXS8uVWy/Cbsr9i0m2jRtnrfPEWU+6t0dQTZcJEfF9b7G2F7XvstLFWkAKSgYRzFkAwi/KypY0Qtew==",
       "type": "package",
@@ -4448,6 +4584,19 @@
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.xml",
         "microsoft.entityframeworkcore.design.2.2.4.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/2.2.4": {
+      "sha512": "dJ39bhsP+UcB+f/S3XS1Mcw69CeY2Kl+i7vPNmUBdvYBwl40B6uP08wqbpmv/fuak//YJrwYaj9xE+8b1ozd8A==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/2.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.2.2.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.4": {
@@ -9504,10 +9653,26 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Contracts.DAL.App/1.0.0": {
+      "type": "project",
+      "path": "../Contracts.DAL.App/Contracts.DAL.App.csproj",
+      "msbuildProject": "../Contracts.DAL.App/Contracts.DAL.App.csproj"
+    },
+    "DAL.App.EF/1.0.0": {
+      "type": "project",
+      "path": "../DAL.App.EF/DAL.App.EF.csproj",
+      "msbuildProject": "../DAL.App.EF/DAL.App.EF.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "DAL.App.EF >= 1.0.0",
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.2.0",
       "Microsoft.AspNetCore.CookiePolicy >= 2.2.0",
@@ -9517,6 +9682,7 @@
       "Microsoft.AspNetCore.Identity.UI >= 2.2.0",
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 2.2.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.2.4",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.4",
       "Microsoft.NETCore.App >= 2.2.0"
@@ -9549,7 +9715,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/akaver/Development/ITCollege/Distributed/ExamBase2019/DAL.App.EF/DAL.App.EF.csproj": {
+              "projectPath": "/Users/akaver/Development/ITCollege/Distributed/ExamBase2019/DAL.App.EF/DAL.App.EF.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -9596,6 +9766,10 @@
           "Microsoft.AspNetCore.StaticFiles": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[2.2.4, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",

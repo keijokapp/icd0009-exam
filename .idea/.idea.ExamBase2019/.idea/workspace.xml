@@ -1,17 +1,369 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0cda088d-95c0-4154-8d91-ebcb6ae7578c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IAuthorRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookAndAuthorRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts.DAL.App/Repositories/ICommentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IPublisherRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/AppUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Helpers/AppRepositoryFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Mappers/IdentityFunctionMapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Repositories/AuthorRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Repositories/BookAndAuthorRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Repositories/BookRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Repositories/CommentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAL.App.EF/Repositories/PublisherRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Author.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/BaseEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/BookAndAuthor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Comment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Publisher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ExamBase2019/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ExamBase2019/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ExamBase2019/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ExamBase2019/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExamBase2019.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ExamBase2019.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Data/ApplicationDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Data/Migrations/00000000000000_CreateIdentitySchema.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/WebApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp2.2/WebApp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp2.2/WebApp.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp2.2/WebApp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp2.2/WebApp.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/WebApp.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/WebApp.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/project.packagespec.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/IAppUnitOfWork.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <marker date="1558339757796" expanded="false" signature="6:97" ph="..." />
+                <marker date="1558339757796" expanded="true" signature="126:438" ph="{...}" />
+                <marker date="1558339757796" expanded="true" signature="182:436" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/AppUnitOfWork.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="95" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="95" />
+              <folding>
+                <marker date="1558340055539" expanded="true" signature="6:169" ph="..." />
+                <marker date="1558340055539" expanded="true" signature="191:984" ph="{...}" />
+                <marker date="1558340055539" expanded="true" signature="271:982" ph="{...}" />
+                <marker date="1558340055539" expanded="true" signature="428:448" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/AuthorRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="99" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="99" />
+              <folding>
+                <marker date="1558340208638" expanded="true" signature="6:157" ph="..." />
+                <marker date="1558340208638" expanded="true" signature="192:453" ph="{...}" />
+                <marker date="1558340208638" expanded="true" signature="294:451" ph="{...}" />
+                <marker date="1558340208638" expanded="true" signature="425:445" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Mappers/IdentityFunctionMapper.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="75" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="75" />
+              <folding>
+                <marker date="1558340642565" expanded="true" signature="83:289" ph="{...}" />
+                <marker date="1558340642565" expanded="true" signature="142:287" ph="{...}" />
+                <marker date="1558340642565" expanded="true" signature="232:281" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/BookRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+              <folding>
+                <marker date="1558340348848" expanded="true" signature="6:157" ph="..." />
+                <marker date="1558340348848" expanded="true" signature="192:455" ph="{...}" />
+                <marker date="1558340348848" expanded="true" signature="286:453" ph="{...}" />
+                <marker date="1558340348848" expanded="true" signature="427:447" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Helpers/AppRepositoryFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="92" lean-forward="true" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="93" />
+              <folding>
+                <marker date="1558340529853" expanded="true" signature="6:115" ph="..." />
+                <marker date="1558340529853" expanded="true" signature="145:938" ph="{...}" />
+                <marker date="1558340529853" expanded="true" signature="223:936" ph="{...}" />
+                <marker date="1558340529853" expanded="true" signature="267:323" ph="{...}" />
+                <marker date="1558340529853" expanded="true" signature="368:921" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/BookAndAuthorRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="2" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="8" selection-end-column="2" />
+              <folding>
+                <marker date="1558340369388" expanded="true" signature="6:157" ph="..." />
+                <marker date="1558340369388" expanded="true" signature="192:488" ph="{...}" />
+                <marker date="1558340369388" expanded="true" signature="322:486" ph="{...}" />
+                <marker date="1558340369388" expanded="true" signature="460:480" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/CommentRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="103" selection-start-line="7" selection-start-column="103" selection-end-line="7" selection-end-column="103" />
+              <folding>
+                <marker date="1558340369386" expanded="true" signature="6:157" ph="..." />
+                <marker date="1558340369386" expanded="true" signature="192:470" ph="{...}" />
+                <marker date="1558340369386" expanded="true" signature="298:468" ph="{...}" />
+                <marker date="1558340369386" expanded="true" signature="442:462" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/PublisherRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="111" selection-start-line="7" selection-start-column="111" selection-end-line="7" selection-end-column="111" />
+              <folding>
+                <marker date="1558340369390" expanded="true" signature="6:157" ph="..." />
+                <marker date="1558340369390" expanded="true" signature="192:480" ph="{...}" />
+                <marker date="1558340369390" expanded="true" signature="306:478" ph="{...}" />
+                <marker date="1558340369390" expanded="true" signature="452:472" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Domain/BaseEntity.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+              <folding>
+                <marker date="1558339983562" expanded="true" signature="63:169" ph="{...}" />
+                <marker date="1558339983562" expanded="true" signature="118:167" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/CommentRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Identity/AppUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/BookAndAuthorRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Identity/AppRole.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts.DAL.App/IAppUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/BookRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Comment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/AuthorRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/BookAndAuthor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Publisher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Author.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/AppUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IPublisherRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/ICommentRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookAndAuthorRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/_LoginPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IAuthorRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/Book.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Mappers/IdentityFunctionMapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Helpers/AppRepositoryFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/PublisherRepository.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Domain/Class1.cs" />
+        <option value="$PROJECT_DIR$/Domain/Publisher.cs" />
+        <option value="$PROJECT_DIR$/Domain/Comment.cs" />
+        <option value="$PROJECT_DIR$/Domain/BookAndAuthor.cs" />
+        <option value="$PROJECT_DIR$/Domain/Author.cs" />
+        <option value="$PROJECT_DIR$/Domain/Book.cs" />
+        <option value="$PROJECT_DIR$/Domain/Identity/AppUser.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Class1.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_LoginPartial.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Startup.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/Class1.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IAuthorRepository.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookAndAuthorRepository.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookRepository.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/Repositories/ICommentRepository.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/Repositories/IPublisherRepository.cs" />
+        <option value="$PROJECT_DIR$/Contracts.DAL.App/IAppUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/Domain/BaseEntity.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/AppUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Repositories/AuthorRepository.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Repositories/BookAndAuthorRepository.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Repositories/PublisherRepository.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Repositories/CommentRepository.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Repositories/BookRepository.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Helpers/AppRepositoryFactory.cs" />
+        <option value="$PROJECT_DIR$/DAL.App.EF/Mappers/IdentityFunctionMapper.cs" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="6" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="697" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Contracts.DAL.App" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Contracts.DAL.App" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Repositories" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DAL.App.EF" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DAL.App.EF" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Repositories" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Domain" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Domain" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Identity" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebApp" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebApp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebApp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="ExamBase2019" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebApp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebApp">
     <configuration name="WebApp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -44,5 +396,400 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0cda088d-95c0-4154-8d91-ebcb6ae7578c" name="Default Changelist" comment="" />
+      <created>1558336612255</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558336612255</updated>
+      <workItem from="1558336614357" duration="3331000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3331000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="697" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22859451" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" visible="true" weight="0.14876033" />
+      <window_info anchor="bottom" id="Docker" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="REST Client" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3289256" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Build" weight="0.3289256" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289256" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/WebApp/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/Comment.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <marker date="1558338403597" expanded="true" signature="16:198" ph="{...}" />
+            <marker date="1558338403597" expanded="true" signature="56:196" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/Publisher.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <marker date="1558338403599" expanded="true" signature="51:211" ph="{...}" />
+            <marker date="1558338403599" expanded="true" signature="93:209" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/BookAndAuthor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <marker date="1558338403594" expanded="true" signature="16:241" ph="{...}" />
+            <marker date="1558338403594" expanded="true" signature="62:239" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/Author.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <marker date="1558338385662" expanded="true" signature="6:71" ph="..." />
+            <marker date="1558338385662" expanded="true" signature="89:428" ph="{...}" />
+            <marker date="1558338385662" expanded="true" signature="128:426" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/Identity/AppRole.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <folding>
+            <marker date="1557133566000" expanded="false" signature="6:82" ph="..." />
+            <marker date="1557133566000" expanded="true" signature="109:212" ph="{...}" />
+            <marker date="1557133566000" expanded="true" signature="189:210" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/Book.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <marker date="1558338766899" expanded="true" signature="6:70" ph="..." />
+            <marker date="1558338766899" expanded="true" signature="88:548" ph="{...}" />
+            <marker date="1558338766899" expanded="true" signature="125:546" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/Identity/AppUser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1558338766897" expanded="false" signature="6:116" ph="..." />
+            <marker date="1558338766897" expanded="true" signature="143:291" ph="{...}" />
+            <marker date="1558338766897" expanded="true" signature="224:289" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/AppDbContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <marker date="1558338964622" expanded="false" signature="6:209" ph="..." />
+            <marker date="1558338964622" expanded="true" signature="231:1079" ph="{...}" />
+            <marker date="1558338964622" expanded="true" signature="306:1077" ph="{...}" />
+            <marker date="1558338964622" expanded="true" signature="670:690" ph="{...}" />
+            <marker date="1558338964622" expanded="true" signature="761:1071" ph="{...}" />
+            <marker date="1558338964622" expanded="true" signature="962:1061" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApp/Views/Shared/_LoginPartial.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding>
+            <marker date="1558339110565" expanded="true" signature="7:59" ph="..." />
+            <marker date="1558339110565" expanded="true" signature="171:956" ph="@..." />
+            <marker date="1558339110565" expanded="true" signature="207:681" ph="{...}" />
+            <marker date="1558339110565" expanded="true" signature="686:956" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApp/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <marker date="1558339137356" expanded="true" signature="6:518" ph="..." />
+            <marker date="1558339137356" expanded="true" signature="536:3422" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="563:3420" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="622:685" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="908:2418" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="994:1258" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="1723:2087" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="2116:2306" ph="/* services ... */" />
+            <marker date="1558339137356" expanded="true" signature="2606:3414" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="2653:2774" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="2791:3050" ph="{...}" />
+            <marker date="1558339137356" expanded="true" signature="3244:3402" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IAuthorRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <marker date="1558339665588" expanded="true" signature="6:72" ph="..." />
+            <marker date="1558339665588" expanded="true" signature="114:205" ph="{...}" />
+            <marker date="1558339665588" expanded="true" signature="182:203" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookAndAuthorRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="77" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
+          <folding>
+            <marker date="1558339665592" expanded="true" signature="6:72" ph="..." />
+            <marker date="1558339665592" expanded="true" signature="114:220" ph="{...}" />
+            <marker date="1558339665592" expanded="true" signature="197:218" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IBookRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+          <folding>
+            <marker date="1558339665596" expanded="true" signature="6:72" ph="..." />
+            <marker date="1558339665596" expanded="true" signature="114:200" ph="{...}" />
+            <marker date="1558339665596" expanded="true" signature="177:198" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/ICommentRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+          <folding>
+            <marker date="1558339665590" expanded="true" signature="6:72" ph="..." />
+            <marker date="1558339665590" expanded="true" signature="114:206" ph="{...}" />
+            <marker date="1558339665590" expanded="true" signature="183:204" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/Repositories/IPublisherRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding>
+            <marker date="1558339658389" expanded="true" signature="6:72" ph="..." />
+            <marker date="1558339658389" expanded="true" signature="114:210" ph="{...}" />
+            <marker date="1558339658389" expanded="true" signature="187:208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contracts.DAL.App/IAppUnitOfWork.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <marker date="1558339757796" expanded="false" signature="6:97" ph="..." />
+            <marker date="1558339757796" expanded="true" signature="126:438" ph="{...}" />
+            <marker date="1558339757796" expanded="true" signature="182:436" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Domain/BaseEntity.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <folding>
+            <marker date="1558339983562" expanded="true" signature="63:169" ph="{...}" />
+            <marker date="1558339983562" expanded="true" signature="118:167" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/AppUnitOfWork.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="95" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="95" />
+          <folding>
+            <marker date="1558340055539" expanded="true" signature="6:169" ph="..." />
+            <marker date="1558340055539" expanded="true" signature="191:984" ph="{...}" />
+            <marker date="1558340055539" expanded="true" signature="271:982" ph="{...}" />
+            <marker date="1558340055539" expanded="true" signature="428:448" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/BookAndAuthorRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="8" selection-end-column="2" />
+          <folding>
+            <marker date="1558340369388" expanded="true" signature="6:157" ph="..." />
+            <marker date="1558340369388" expanded="true" signature="192:488" ph="{...}" />
+            <marker date="1558340369388" expanded="true" signature="322:486" ph="{...}" />
+            <marker date="1558340369388" expanded="true" signature="460:480" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/PublisherRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="111" selection-start-line="7" selection-start-column="111" selection-end-line="7" selection-end-column="111" />
+          <folding>
+            <marker date="1558340369390" expanded="true" signature="6:157" ph="..." />
+            <marker date="1558340369390" expanded="true" signature="192:480" ph="{...}" />
+            <marker date="1558340369390" expanded="true" signature="306:478" ph="{...}" />
+            <marker date="1558340369390" expanded="true" signature="452:472" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/CommentRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="103" selection-start-line="7" selection-start-column="103" selection-end-line="7" selection-end-column="103" />
+          <folding>
+            <marker date="1558340369386" expanded="true" signature="6:157" ph="..." />
+            <marker date="1558340369386" expanded="true" signature="192:470" ph="{...}" />
+            <marker date="1558340369386" expanded="true" signature="298:468" ph="{...}" />
+            <marker date="1558340369386" expanded="true" signature="442:462" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/BookRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+          <folding>
+            <marker date="1558340348848" expanded="true" signature="6:157" ph="..." />
+            <marker date="1558340348848" expanded="true" signature="192:455" ph="{...}" />
+            <marker date="1558340348848" expanded="true" signature="286:453" ph="{...}" />
+            <marker date="1558340348848" expanded="true" signature="427:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Helpers/AppRepositoryFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="92" lean-forward="true" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="93" />
+          <folding>
+            <marker date="1558340529853" expanded="true" signature="6:115" ph="..." />
+            <marker date="1558340529853" expanded="true" signature="145:938" ph="{...}" />
+            <marker date="1558340529853" expanded="true" signature="223:936" ph="{...}" />
+            <marker date="1558340529853" expanded="true" signature="267:323" ph="{...}" />
+            <marker date="1558340529853" expanded="true" signature="368:921" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Repositories/AuthorRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="99" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="99" />
+          <folding>
+            <marker date="1558340208638" expanded="true" signature="6:157" ph="..." />
+            <marker date="1558340208638" expanded="true" signature="192:453" ph="{...}" />
+            <marker date="1558340208638" expanded="true" signature="294:451" ph="{...}" />
+            <marker date="1558340208638" expanded="true" signature="425:445" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL.App.EF/Mappers/IdentityFunctionMapper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="75" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="75" />
+          <folding>
+            <marker date="1558340642565" expanded="true" signature="83:289" ph="{...}" />
+            <marker date="1558340642565" expanded="true" signature="142:287" ph="{...}" />
+            <marker date="1558340642565" expanded="true" signature="232:281" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

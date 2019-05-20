@@ -17,7 +17,11 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
-        "projectReferences": {}
+        "projectReferences": {
+          "/Users/akaver/Development/ITCollege/Distributed/ExamBase2019/DAL.App.EF/DAL.App.EF.csproj": {
+            "projectPath": "/Users/akaver/Development/ITCollege/Distributed/ExamBase2019/DAL.App.EF/DAL.App.EF.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -64,6 +68,10 @@
         "Microsoft.AspNetCore.StaticFiles": {
           "target": "Package",
           "version": "[2.2.0, )"
+        },
+        "Microsoft.EntityFrameworkCore.InMemory": {
+          "target": "Package",
+          "version": "[2.2.4, )"
         },
         "Microsoft.EntityFrameworkCore.Sqlite": {
           "target": "Package",
