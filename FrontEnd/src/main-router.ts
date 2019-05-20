@@ -25,7 +25,12 @@ export class MainRouter {
         {route: 'identity/login', name: 'identity' + 'Login', moduleId: PLATFORM.moduleName('identity/login'), nav: false, title: 'Login'},
         {route: 'identity/register', name: 'identity' + 'Register', moduleId: PLATFORM.moduleName('identity/register'), nav: false, title: 'Register'},
         {route: 'identity/logout', name: 'identity' + 'Logout', moduleId: PLATFORM.moduleName('identity/logout'), nav: false, title: 'Logout'},
-/*
+
+        {route: ['books','books/index'], name: 'books' + 'Index', moduleId: PLATFORM.moduleName('books/index'), nav: true, title: 'Books'},
+        {route: 'books/details/:id', name: 'books' + 'Details', moduleId: PLATFORM.moduleName('books/details'), nav: false, title: 'Book Details'},
+
+
+        /*
 
         //{route: '', name: '', moduleId: PLATFORM.moduleName(''), nav: true, title: ''},
         {route: ['persons','persons/index'], name: 'persons' + 'Index', moduleId: PLATFORM.moduleName('persons/index'), nav: true, title: 'Persons'},

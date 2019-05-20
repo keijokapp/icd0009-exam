@@ -1,0 +1,73 @@
+<template>
+
+  <h1>Index</h1>
+
+
+  <form>
+    <div class="row">
+      <div class="col-md-1">
+        <label class="control-label">Find: </label>
+      </div>
+      <div class="col-md-2">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+
+
+  <p>
+    <a href="/Books/Create">Create New</a>
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          PublishingYear
+        </th>
+        <th>
+          Publisher
+        </th>
+        <th>
+          Authors
+        </th>
+        <th>
+          Comments
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="book of books">
+        <td>
+          ${book.title}
+        </td>
+        <td>
+          ${book.publishingYear}
+        </td>
+        <td>
+          ascsadx
+        </td>
+        <td>
+          <ul>
+            <li repeat.for="bookAndAuthor of book.bookAndAuthors">${bookAndAuthor.author.firstName} ${bookAndAuthor.author.lastName}</li>
+          </ul>
+        </td>
+        <td>
+          ${book.comments.length}
+        </td>
+        <td>
+          <a route-href="route: booksEdit; params.bind: {id: book.id}">Edit</a> |
+          <a route-href="route: booksDetails; params.bind: {id: book.id}">Details</a> |
+          <a route-href="route: booksDelete; params.bind: {id: book.id}">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>

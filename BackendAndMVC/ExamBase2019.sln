@@ -11,6 +11,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{AC1C3FCC-A604-4067-95B4-AE1E73EB3870}"
 ProjectSection(SolutionItems) = preProject
 	generate_controllers.sh = generate_controllers.sh
+	generate_api_controllers.sh = generate_api_controllers.sh
 EndProjectSection
 EndProject
 Global
