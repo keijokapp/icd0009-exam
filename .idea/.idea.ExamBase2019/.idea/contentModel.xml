@@ -26,6 +26,7 @@
         <e p="AppUnitOfWork.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="DAL.App.EF.csproj" t="IncludeRecursive" />
+        <e p="DataSeeder.cs" t="Include" />
         <e p="Helpers" t="Include">
           <e p="AppRepositoryFactory.cs" t="Include" />
         </e>
