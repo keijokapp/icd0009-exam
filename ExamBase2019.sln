@@ -8,6 +8,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.App.EF", "DAL.App.EF\DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts.DAL.App", "Contracts.DAL.App\Contracts.DAL.App.csproj", "{799DC742-41F5-4605-A687-E38B62AEB59C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{AC1C3FCC-A604-4067-95B4-AE1E73EB3870}"
+ProjectSection(SolutionItems) = preProject
+	generate_controllers.sh = generate_controllers.sh
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

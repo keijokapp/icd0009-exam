@@ -69,7 +69,9 @@
         <e p="Publisher.cs" t="Include" />
       </e>
       <e p="ExamBase2019.sln" t="IncludeFlat" />
+      <e p="generate_controllers.sh" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Solution Files" t="Include" />
       <e p="WebApp" t="IncludeRecursive">
         <e p="app.config" t="Include" />
         <e p="app.db" t="Include" />
@@ -84,7 +86,12 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AuthorsController.cs" t="Include" />
+          <e p="BookAndAuthorsController.cs" t="Include" />
+          <e p="BooksController.cs" t="Include" />
+          <e p="CommentsController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="PublishersController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
@@ -104,9 +111,44 @@
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Authors" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="BookAndAuthors" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Books" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Comments" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Publishers" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_CookieConsentPartial.cshtml" t="Include" />
