@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.App.EF;
 using Domain.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -33,12 +35,6 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseInMemoryDatabase("InMemoryDB"));
@@ -46,8 +42,14 @@ namespace WebApp
    
             
             // do not add custom identity pages, if not needed
+            services
+                .AddAuthentication(o =>
+                {
+                    o.DefaultScheme = IdentityConstants.ApplicationScheme;
+                    o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+                });
             services.AddIdentity<AppUser, AppRole>()
-//                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<AppDbContext>();
 
             
@@ -68,14 +70,13 @@ namespace WebApp
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
             */
-            
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
                     options.SerializerSettings.Formatting = Formatting.Indented;
-                })
-                ;
+                });
             
             services.AddCors(options =>
             {
@@ -90,10 +91,9 @@ namespace WebApp
             
             // =============== JWT support ===============
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
-            
+
             services
-                .AddAuthentication()
-                .AddCookie(options => { options.SlidingExpiration = true; })
+                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(cfg =>
                 {
                     cfg.RequireHttpsMetadata = false;
@@ -106,14 +106,19 @@ namespace WebApp
                         ClockSkew = TimeSpan.Zero // remove delay of token when expire
                     };
                 });
-
             
-            
+            services.AddAuthorization(options =>
+            {
+                var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
+                    JwtBearerDefaults.AuthenticationScheme);
+                defaultAuthorizationPolicyBuilder = 
+                    defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+                options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager
-        )
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
         {
             DAL.App.EF.DataSeeder.SeedInitialData(context, userManager, roleManager);
             
@@ -129,18 +134,14 @@ namespace WebApp
                 app.UseHsts();
             }
 
-       //     app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseCors("CorsAllowAll");
 
-            app.UseCookiePolicy();
-
             app.UseAuthentication();
 
 
-
-            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

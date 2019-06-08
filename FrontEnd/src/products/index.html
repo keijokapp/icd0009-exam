@@ -1,0 +1,106 @@
+<template>
+<div if.bind="order.orderLines.length">
+	<h1>Order</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Quantity
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody repeat.for="i of order.orderLines.length">
+       <tr>
+        <td>
+          ${$parent.order.orderLines[i].product.name}
+        </td>
+        <td>
+          ${$parent.order.orderLines[i].product.price}
+        </td>
+        <td>
+          ${$parent.order.orderLines[i].quantity}
+        </td>
+        <td>
+          <button click.delegate="increaseOrderLine($parent.order.orderLines[i])">More</button>
+          <button click.delegate="decreaseOrderLine($parent.order.orderLines[i])">Less</button>
+        </td>
+      </tr>
+			<tr>
+				<td colspan="4">
+					<table>
+						<tbody repeat.for="addition of $parent.order.orderLines[i].additions">
+							 <tr>
+								<td>
+								  ${addition.product.name}
+								</td>
+								<td>
+								  $ ${addition.product.price}
+								</td>
+								<td>
+								  ${addition.quantity}
+								</td>
+								<td>
+								  <button click.delegate="increaseAddition(addition)">More</button>
+								  <button click.delegate="decreaseAddition($parent.order.orderLines[i], addition)">Less</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<select value-bind="$parent.toppingSelection[i]">
+						<option repeat.for="ii of additions.length" value="${ii}">${$parent.additions[ii].name}</option>
+					</select>
+					<button click.delegate="addAddition(i)">Add</button>
+</td>
+		   </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Total price: ${order.price}
+  </p>
+
+  <p>
+    Location: <input type="text" bind-value="order.deliveryLocation" />
+  </p>
+
+	<button click.delegate="post()">place order</button>
+
+</div>
+	
+
+  <h1>Products</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr repeat.for="product of products">
+        <td>
+          ${product.name}
+        </td>
+        <td>
+          ${product.price}
+        </td>
+        <td>
+          <button click.delegate="addProduct(product)">Add</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>

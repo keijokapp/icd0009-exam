@@ -41,7 +41,24 @@ namespace DAL.App.EF
 
             ctx.Products.Add(new Product
             {
+                Name = "pizza",
                 Category = foodCategory,
+                Price = 2400
+            });
+
+            
+            ctx.Products.Add(new Product
+            {
+                Name = "asdasda",
+                Category = foodCategory,
+                Price = 2400
+            });
+
+            
+            ctx.Products.Add(new Product
+            {
+                Name = "koerapasteet",
+                Category = toppingCategory,
                 Price = 2400
             });
  
@@ -55,10 +72,15 @@ namespace DAL.App.EF
 
             var user = new AppUser
             {
+                UserName = "keijokapp",
                 Email = "keijo.kapp@gmail.com"
             };
 
-            userManager.CreateAsync(user, "Passw0rd").Wait();
+            var success = userManager.CreateAsync(user, "Passw0rd").Result;
+            if (success != IdentityResult.Success)
+            {
+                throw new Exception("shit");
+            }
             userManager.AddToRoleAsync(user, "Admin").Wait();
 
             ctx.SaveChanges();

@@ -5,15 +5,16 @@ namespace WebApp.DTO
 {
 	public class Order
 	{
-		public int Id { get; set; }
+		public int? Id { get; set; }
 
 		public OrderUser User { get; set; }
 
-		public Domain.OrderState State { get; set; }
+		public Domain.OrderState? State { get; set; }
 
+		[Required]
 		public string DeliveryLocation { get; set; }
 		
-		public int Price { get; set; }
+		public int? Price { get; set; }
 
 		[Required]
 		public IEnumerable<OrderLine> OrderLines { get; set; }
@@ -27,7 +28,7 @@ namespace WebApp.DTO
 
 			public int Quantity { get; set; }
 
-			public int Price { get; set; }
+			public int? Price { get; set; }
 
 			[Required]
 			public List<OrderLineAddition> OrderLineAdditions { get; set; }

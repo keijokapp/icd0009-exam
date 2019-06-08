@@ -8,6 +8,7 @@ using Domain.Identity;
 using ee.itcollege.akaver.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using WebApp.Mappers;
 using Order = WebApp.DTO.Order;
 
@@ -15,6 +16,7 @@ namespace WebApp.ApiControllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class OrderController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -28,14 +30,21 @@ namespace WebApp.ApiControllers
         }
 
         [HttpGet]
-        [Authorize]
         public async Task<ActionResult<IEnumerable<Order>>> Get()
         {
-            return Ok(_context.Orders.Where(o => o.UserId == User.GetUserId()).Select(o => _mapper.MapFromDal(o)).AsEnumerable());
+            var userId = HttpContext.User.GetUserId();
+
+            var user = _context.Users.Find(userId);
+
+            var q = await _userManager.IsInRoleAsync(user, "Admin") ? _context.Orders : _context.Orders.Where(o => o.UserId == userId);
+            
+            return Ok(q.Include(o => o.User)
+                .Include(o => o.OrderLines)
+                .ThenInclude(l => l.OrderLineAdditions)
+                .Select(o => _mapper.MapFromDal(o)).AsEnumerable());
         }
 
         [HttpGet("{id}")]
-        [Authorize]
         public async Task<ActionResult<Order>> Get(int id)
         {
             var order = await _context.Orders.FindAsync(id);
@@ -44,7 +53,7 @@ namespace WebApp.ApiControllers
                 return NotFound();
             }
 
-            if (order.UserId != User.GetUserId())
+            if (order.UserId != HttpContext.User.GetUserId())
             {
                 var user = _context.Users.Find(id);
                 if(!await _userManager.IsInRoleAsync(user, "Admin"))
@@ -62,7 +71,7 @@ namespace WebApp.ApiControllers
             var o = new Domain.Order
             {
                 DeliveryLocation = order.DeliveryLocation,
-                UserId = User.GetUserId(),
+                UserId =  HttpContext.User.GetUserId(),
                 State = OrderState.Waiting,
                 OrderLines = new List<OrderLine>(),
                 Price = 0
@@ -72,7 +81,7 @@ namespace WebApp.ApiControllers
             {
                 var product = _context.Products.Find(line.ProductId);
 
-                var oLine = new Domain.OrderLine
+                var oLine = new OrderLine
                 {
                     Price = product.Price,
                     Quantity = line.Quantity,
@@ -99,6 +108,24 @@ namespace WebApp.ApiControllers
             await _context.SaveChangesAsync();
 
             return Ok(new { id = order.Id });
+        }
+
+        [HttpPost("{id}/status")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> SetState(int id, OrderState state)
+        {
+            var order = _context.Orders.Find(id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            order.State = state;
+
+            _context.Orders.Update(order);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }

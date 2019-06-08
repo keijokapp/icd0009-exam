@@ -5,25 +5,36 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DAL.App.EF;
 using Domain;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebApp.ApiControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public ProductsController(AppDbContext context)
+        public ProductController(AppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> Get()
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<DTO.Product>>> Get()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(p => p.Category)
+                .Select(p => new DTO.Product
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    CategoryName = p.Category.Name,
+                    CategoryType = p.Category.Type,
+                    CategoryId = p.Category.Id
+                }).ToListAsync();
         }
 
         [HttpGet("{id}")]
