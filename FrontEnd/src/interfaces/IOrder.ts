@@ -10,11 +10,11 @@ export interface IOrderUser {
   username: string
 }
 
-interface IOrderListAddition {
+export interface IOrderLineAddition {
   productId: number,
-  productName: string,
+  productName: string | undefined,
   quantity: number,
-  price: number
+  price: number | undefined
 }
 
 export interface IOrderLine {
@@ -22,7 +22,7 @@ export interface IOrderLine {
   productName: string | undefined,
   quantity: number,
   price: number | undefined,
-  orderListAdditions: IOrderListAddition[]
+  orderLineAdditions: IOrderLineAddition[]
 }
 
 export interface IOrder {

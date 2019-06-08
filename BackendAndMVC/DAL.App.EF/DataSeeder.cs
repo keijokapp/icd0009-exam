@@ -54,6 +54,21 @@ namespace DAL.App.EF
                 Price = 2400
             });
 
+            ctx.Products.Add(new Product
+            {
+                Name = "some dring",
+                Category = otherCategory,
+                Price = 300
+            });
+
+            
+            ctx.Products.Add(new Product
+            {
+                Name = "Transport linnaliinibussiga",
+                Category = transportCategory,
+                Price = 9900
+            });
+
             
             ctx.Products.Add(new Product
             {

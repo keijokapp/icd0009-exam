@@ -1,71 +1,40 @@
 <template>
 
-  <h1>Index</h1>
+  <h1>Orders</h1>
 
-
-  <form>
-    <div class="row">
-      <div class="col-md-1">
-        <label class="control-label">Find: </label>
-      </div>
-      <div class="col-md-2">
-        <input value.bind="search" class="form-control" />
-      </div>
-      <div class="col-md-4">
-        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
-        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
-      </div>
-    </div>
-  </form>
-
-
-  <p>
-    <a href="/Books/Create">Create New</a>
-  </p>
   <table class="table">
     <thead>
       <tr>
-        <th>
-          Title
-        </th>
-        <th>
-          PublishingYear
-        </th>
-        <th>
-          Publisher
-        </th>
-        <th>
-          Authors
-        </th>
-        <th>
-          Comments
-        </th>
+        <th>Items</th>
+        <th>Price</th>
+        <th>Delivery location</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr repeat.for="book of books">
-        <td>
-          ${book.title}
-        </td>
-        <td>
-          ${book.publishingYear}
-        </td>
-        <td>
-          ascsadx
-        </td>
+      <tr repeat.for="order of orders">
         <td>
           <ul>
-            <li repeat.for="bookAndAuthor of book.bookAndAuthors">${bookAndAuthor.author.firstName} ${bookAndAuthor.author.lastName}</li>
+            <li repeat.for="line of order.orderLines">${line.productName} - ${line.price / 100}
+            <ul>
+              <li repeat.for="addition of line.orderLineAdditions">${addition.productName} - ${addition.price / 100}</li>
+            </ul>
+            </li>
           </ul>
         </td>
         <td>
-          ${book.comments.length}
+          ${order.price / 100}
         </td>
         <td>
-          <a route-href="route: booksEdit; params.bind: {id: book.id}">Edit</a> |
-          <a route-href="route: booksDetails; params.bind: {id: book.id}">Details</a> |
-          <a route-href="route: booksDelete; params.bind: {id: book.id}">Delete</a>
+          ${order.deliveryLocation}
+        </td>
+        <td>
+          <select change.delegate="updateState(order, event)">
+            <option value="0" selected="${order.state === 0 ? 'selected' : undefined}">Waiting</option>
+            <option value="1" selected="${order.state === 1 ? 'selected' : undefined}">Paid</option>
+            <option value="2" selected="${order.state === 2 ? 'selected' : undefined}">Process</option>
+            <option value="3" selected="${order.state === 3 ? 'selected' : undefined}">Done</option>
+          </select>
         </td>
       </tr>
     </tbody>

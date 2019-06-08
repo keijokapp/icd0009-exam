@@ -2,6 +2,7 @@ import { LogManager, View, autoinject, bindable } from "aurelia-framework";
 import { RouteConfig, NavigationInstruction } from "aurelia-router";
 import { OrderService } from "../services/order-service";
 import { IOrder } from "interfaces/IOrder";
+import {AppConfig} from "../app-config";
 
 export var log = LogManager.getLogger('ContactTypes.Index');
 
@@ -10,12 +11,11 @@ export var log = LogManager.getLogger('ContactTypes.Index');
 @autoinject
 export class Index {
 
-  private books: IOrder[] = [];
-
-  @bindable private search: string = '';
+  private orders: IOrder[] = [];
 
   constructor(
-    private booksService: OrderService
+    private orderService: OrderService,
+    private appConfig: AppConfig
   ) {
     log.debug('constructor');
   }
@@ -61,24 +61,22 @@ export class Index {
     log.debug('deactivate');
   }
 
-  searchClicked() {
-    log.debug('searchClicked', this.search);
-    this.loadData();
-  }
-
-  searchResetClicked() {
-    log.debug('searchResetClicked');
-    this.search = '';
-    this.loadData();
-  }
-
   loadData(){
-
-    this.booksService.fetchAll('?search=' + this.search).then(
+    this.orderService.fetchAll('').then(
       jsonData => {
         log.debug('jsonData', jsonData);
-        this.books = jsonData;
+        this.orders = jsonData;
       }
     );
+  }
+
+  updateState(order) {
+    console.log(order);
+    fetch(this.appConfig.apiUrl + 'Order/' + order.id + '/state?state=' + order.state, {
+      method: 'PUT',
+        headers: {
+          Authorization: 'Bearer ' + this.appConfig.jwt,
+        }
+    })
   }
 }

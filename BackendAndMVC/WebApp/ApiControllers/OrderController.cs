@@ -40,7 +40,10 @@ namespace WebApp.ApiControllers
             
             return Ok(q.Include(o => o.User)
                 .Include(o => o.OrderLines)
-                .ThenInclude(l => l.OrderLineAdditions)
+                    .ThenInclude(l => l.OrderLineAdditions)
+                    .ThenInclude(o => o.Product)
+                .Include(o => o.OrderLines)
+                    .ThenInclude(o => o.Product)
                 .Select(o => _mapper.MapFromDal(o)).AsEnumerable());
         }
 
@@ -92,6 +95,8 @@ namespace WebApp.ApiControllers
 
                 o.Price += line.Quantity * product.Price;
 
+                oLine.OrderLineAdditions = new List<OrderLineAddition>();
+
                 foreach (var addition in line.OrderLineAdditions)
                 {
                     product = _context.Products.Find(addition.ProductId);
@@ -110,7 +115,7 @@ namespace WebApp.ApiControllers
             return Ok(new { id = order.Id });
         }
 
-        [HttpPost("{id}/status")]
+        [HttpPut("{id}/state")]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> SetState(int id, OrderState state)
         {

@@ -68,7 +68,7 @@ export class Login {
       if (jwtDTO.token !== undefined){
         log.debug("submit token", jwtDTO.token);
         this.appConfig.jwt = jwtDTO.token;
-        this.router.navigateToRoute('home');
+        this.router.navigateToRoute('products');
       }
     });
   }

@@ -1,5 +1,5 @@
 <template>
-<div if.bind="order.orderLines.length">
+<div if.bind="order.orderLines.length && appConfig.jwt">
 	<h1>Order</h1>
   <table class="table">
     <thead>
@@ -22,7 +22,7 @@
           ${$parent.order.orderLines[i].product.name}
         </td>
         <td>
-          ${$parent.order.orderLines[i].product.price}
+          ${$parent.order.orderLines[i].product.price / 100}
         </td>
         <td>
           ${$parent.order.orderLines[i].quantity}
@@ -32,8 +32,9 @@
           <button click.delegate="decreaseOrderLine($parent.order.orderLines[i])">Less</button>
         </td>
       </tr>
-			<tr>
+			<tr if.bind="$parent.order.orderLines[i].product.categoryType === 0">
 				<td colspan="4">
+          Toppings:
 					<table>
 						<tbody repeat.for="addition of $parent.order.orderLines[i].additions">
 							 <tr>
@@ -41,10 +42,10 @@
 								  ${addition.product.name}
 								</td>
 								<td>
-								  $ ${addition.product.price}
+								  $ ${addition.product.price / 100}
 								</td>
 								<td>
-								  ${addition.quantity}
+								  x${addition.quantity}
 								</td>
 								<td>
 								  <button click.delegate="increaseAddition(addition)">More</button>
@@ -53,8 +54,8 @@
 							</tr>
 						</tbody>
 					</table>
-					<select value-bind="$parent.toppingSelection[i]">
-						<option repeat.for="ii of additions.length" value="${ii}">${$parent.additions[ii].name}</option>
+					<select value.bind="$parent.toppingSelection[i]">
+						<option repeat.for="ii of additions.length" value="${ii}">${additions[ii].name}</option>
 					</select>
 					<button click.delegate="addAddition(i)">Add</button>
 </td>
@@ -63,11 +64,11 @@
   </table>
 
   <p>
-    Total price: ${order.price}
+    Total price: $${order.price / 100}
   </p>
 
   <p>
-    Location: <input type="text" bind-value="order.deliveryLocation" />
+    <label>Delivery location: <input type="text" value.bind="order.deliveryLocation" /></label>
   </p>
 
 	<button click.delegate="post()">place order</button>
@@ -90,15 +91,15 @@
       </tr>
     </thead>
     <tbody>
-       <tr repeat.for="product of products">
+       <tr repeat.for="product of products" if.bind="product.categoryType !== 1 || order.orderLines.length">
         <td>
           ${product.name}
         </td>
         <td>
-          ${product.price}
+          ${product.price / 100}
         </td>
         <td>
-          <button click.delegate="addProduct(product)">Add</button>
+          <button click.delegate="addProduct(product)" if.bind="appConfig.jwt">Add</button>
         </td>
       </tr>
     </tbody>

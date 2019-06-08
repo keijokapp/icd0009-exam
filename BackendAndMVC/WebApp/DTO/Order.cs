@@ -11,7 +11,7 @@ namespace WebApp.DTO
 
 		public Domain.OrderState? State { get; set; }
 
-		[Required]
+		[Required(AllowEmptyStrings = true)]
 		public string DeliveryLocation { get; set; }
 		
 		public int? Price { get; set; }
@@ -39,12 +39,11 @@ namespace WebApp.DTO
 			[Required]
 			public int ProductId { get; set; }
 
-			[Required]
 			public string ProductName { get; set; }
 
 			public int Quantity { get; set; }
 
-			public int Price { get; set; }
+			public int? Price { get; set; }
 		}
 		
 		public class OrderUser

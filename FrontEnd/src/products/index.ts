@@ -1,9 +1,10 @@
 import { LogManager, View, autoinject, bindable } from "aurelia-framework";
 import { RouteConfig, NavigationInstruction } from "aurelia-router";
 import { OrderService } from "../services/order-service";
-import {IOrder, IOrderLine} from "interfaces/IOrder";
+import {IOrderLine, IOrderLineAddition} from "interfaces/IOrder";
 import {IProduct} from "../interfaces/IProduct";
 import {ProductService} from "../services/product-service";
+import {AppConfig} from "../app-config";
 
 export var log = LogManager.getLogger('ContactTypes.Index');
 
@@ -14,22 +15,21 @@ export var log = LogManager.getLogger('ContactTypes.Index');
 @autoinject
 export class Index {
 
-  private products: IProduct[] = [];
-  private additions: IProduct[] = [];
+  public products: IProduct[] = [];
+  public additions: IProduct[] = [];
 
 	@bindable private toppingSelection: string[] = [];
 
-  private order = {
+  @bindable private order = {
     deliveryLocation: '',
     price: 0,
     orderLines: []
   }
 
-  @bindable private search: string = '';
-
   constructor(
     private productService: ProductService,
-  private orderService: OrderService
+  private orderService: OrderService,
+    private appConfig: AppConfig
   ) {
     log.debug('constructor');
   }
@@ -96,10 +96,12 @@ export class Index {
 				additions: []
 			});
 		}
+    this.recalculate();
   }
 
 	increaseOrderLine(orderLine) {
-		orderLine.quantity++
+		orderLine.quantity++;
+    this.recalculate();
 	}
 
 	decreaseOrderLine(orderLine) {
@@ -110,19 +112,21 @@ export class Index {
 				this.order.orderLines.splice(existing, 1);
 			}
 		}
+    this.recalculate();
 	}
 
-	addAddition(i, product) {
+	addAddition(i) {
 		this.order.orderLines[i].additions.push({
-			product: this.additions[i],
+			product: this.additions[this.toppingSelection[i]],
 			quantity: 1
 		});
-console.log(this.order.orderLines[i].additions);
+    this.recalculate();
 	}
 
 
 	increaseAddition(addition) {
 		addition.quantity++;
+		this.recalculate();
 	}
 
 	decreaseAddition(orderLine, addition) {
@@ -133,15 +137,35 @@ console.log(this.order.orderLines[i].additions);
 				orderLine.additions.splice(existing, 1);
 			}
 		}
+    this.recalculate();
 	}
 
+  recalculate() {
+    let price = 0;
+
+    for(const line of this.order.orderLines) {
+      price += line.product.price * line.quantity;
+      for (const addition of line.additions) {
+        price += addition.product.price * addition.quantity;
+      }
+    }
+
+    this.order.price = price;
+  }
 
 	post() {
+    console.log(this.order);
     this.orderService.post({
-      deliveryLocation: <string> this.order.deliveryLocation,
-      orderLines: <IOrderLine[]> this.order.orderLines.map(l => ({
-        productId: l.productId,
-        quantity: l.quantity
+      deliveryLocation: this.order.deliveryLocation,
+      orderLines: this.order.orderLines.map(l => (<IOrderLine> {
+        productId: l.product.id,
+        quantity: l.quantity,
+        price: undefined,
+        productName: undefined,
+        orderLineAdditions: l.additions.map(a => <IOrderLineAddition>({
+          productId: a.product.id,
+          quantity: a.quantity
+        }))
       })),
       price: undefined,
       state: undefined,

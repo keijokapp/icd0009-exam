@@ -13,7 +13,7 @@ namespace Domain
 
         public OrderState State { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = true)]
         public string DeliveryLocation { get; set; }
 
         public int Price { get; set; }

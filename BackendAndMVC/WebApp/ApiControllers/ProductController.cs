@@ -22,7 +22,6 @@ namespace WebApp.ApiControllers
         }
 
         [HttpGet]
-        [Authorize]
         public async Task<ActionResult<IEnumerable<DTO.Product>>> Get()
         {
             return await _context.Products.Include(p => p.Category)
