@@ -7,52 +7,61 @@ namespace DAL.App.EF
 {
     public static class DataSeeder
     {
-        public static void SeedInitialData(AppDbContext ctx, UserManager<AppUser> userManager)
+        public static void SeedInitialData(AppDbContext ctx, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
         {
-            ctx.Authors.Add(new Author()
+            var transportCategory = new Category
             {
-                FirstName = "Isac",
-                LastName = "Asimov",
-            });
-            ctx.Publishers.Add(new Publisher()
-            {
-                PublisherName = "DoubleDay"
-            });
-            ctx.SaveChanges();
-            var appUser = new AppUser();
-            appUser.Email = "a@a.ee";
-            appUser.UserName = appUser.Email;
+                Name = "Transport",
+                Type = CategoryType.Transport
+            };
 
-            var res = userManager.CreateAsync(appUser, "Password").Result;
-            if (!res.Succeeded)
+            var foodCategory = new Category
             {
-                throw new Exception("Identity error");
-            }
-            ctx.SaveChanges();
+                Name = "Food",
+                Type = CategoryType.Food
+            };
 
-            ctx.Books.Add(new Book()
+            var otherCategory = new Category
             {
-                Title = "Foundation",
-                PublishingYear = 1965,
-                AppUserId = 1,
-                PublisherId =1, 
+                Name = "Other",
+                Type = CategoryType.General
+            };
+
+            var toppingCategory = new Category
+            {
+                Name = "Topping",
+                Type = CategoryType.Topping
+            };
+
+
+            ctx.Category.Add(transportCategory);
+            ctx.Category.Add(foodCategory);
+            ctx.Category.Add(otherCategory);
+            ctx.Category.Add(toppingCategory);
+
+            ctx.Products.Add(new Product
+            {
+                Category = foodCategory,
+                Price = 2400
             });
-            ctx.SaveChanges();
-
-            ctx.BookAndAuthors.Add(new BookAndAuthor()
+ 
+            var role = new AppRole
             {
-                BookId = 1,
-                AuthorId = 1,
-            });
-            ctx.SaveChanges();
+                NormalizedName = "Admin",
+                Name = "Admin"
+            };
 
-            ctx.Comments.Add(new Comment()
+            roleManager.CreateAsync(role).Wait();
+
+            var user = new AppUser
             {
-                BookId = 1,
-                CommentBody = "Some comments are here!"
-            });
-            ctx.SaveChanges();
+                Email = "keijo.kapp@gmail.com"
+            };
 
+            userManager.CreateAsync(user, "Passw0rd").Wait();
+            userManager.AddToRoleAsync(user, "Admin").Wait();
+
+            ctx.SaveChanges();
         }
     }
 }

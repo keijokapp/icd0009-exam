@@ -46,8 +46,8 @@ namespace WebApp
    
             
             // do not add custom identity pages, if not needed
-            services.AddDefaultIdentity<AppUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
+            services.AddIdentity<AppUser, AppRole>()
+//                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<AppDbContext>();
 
             
@@ -112,9 +112,10 @@ namespace WebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context, UserManager<AppUser> userManager)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager
+        )
         {
-            DAL.App.EF.DataSeeder.SeedInitialData(context, userManager);
+            DAL.App.EF.DataSeeder.SeedInitialData(context, userManager, roleManager);
             
             if (env.IsDevelopment())
             {
@@ -128,7 +129,7 @@ namespace WebApp
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+       //     app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseCors("CorsAllowAll");

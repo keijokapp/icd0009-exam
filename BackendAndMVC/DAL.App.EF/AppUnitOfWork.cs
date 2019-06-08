@@ -13,10 +13,10 @@ namespace DAL.App.EF
         {
         }
 
-        public IAuthorRepository Authors => _repositoryProvider.GetRepository<IAuthorRepository>();
-        public IBookAndAuthorRepository BookAndAuthors => _repositoryProvider.GetRepository<IBookAndAuthorRepository>();
-        public IBookRepository Books => _repositoryProvider.GetRepository<IBookRepository>();
-        public ICommentRepository Comments => _repositoryProvider.GetRepository<ICommentRepository>();
-        public IPublisherRepository Publishers => _repositoryProvider.GetRepository<IPublisherRepository>();
+        public IProductRepository Products => _repositoryProvider.GetRepository<IProductRepository>();
+        public IOrderRepository Orders => _repositoryProvider.GetRepository<IOrderRepository>();
+        public IOrderLineRepository OrderLines => _repositoryProvider.GetRepository<IOrderLineRepository>();
+        public IOrderLineAdditionRepository OrderLineAdditions => _repositoryProvider.GetRepository<IOrderLineAdditionRepository>();
+        public ICategoryRepository Categories => _repositoryProvider.GetRepository<ICategoryRepository>();
     }
 }

@@ -1,6 +1,6 @@
 import { LogManager, View, autoinject, bindable } from "aurelia-framework";
 import { RouteConfig, NavigationInstruction } from "aurelia-router";
-import { BooksService } from "../services/books-service";
+import { OrderService } from "../services/order-service";
 import { IBook } from "interfaces/IBook";
 
 export var log = LogManager.getLogger('ContactTypes.Index');
@@ -15,7 +15,7 @@ export class Index {
   @bindable private search: string = '';
 
   constructor(
-    private booksService: BooksService
+    private booksService: OrderService
   ) {
     log.debug('constructor');
   }

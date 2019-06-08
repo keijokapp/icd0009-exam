@@ -13,11 +13,11 @@ namespace DAL.App.EF.Helpers
 
         private void RegisterRepositories()
         {
-            AddToCreationMethods<IAuthorRepository>(dataContext => new AuthorRepository(dataContext));
-            AddToCreationMethods<IBookRepository>(dataContext => new BookRepository(dataContext));
-            AddToCreationMethods<IBookAndAuthorRepository>(dataContext => new BookAndAuthorRepository(dataContext));
-            AddToCreationMethods<ICommentRepository>(dataContext => new CommentRepository(dataContext));
-            AddToCreationMethods<IPublisherRepository>(dataContext => new PublisherRepository(dataContext));
+            AddToCreationMethods<IOrderRepository>(dataContext => new OrderRepository(dataContext));
+            AddToCreationMethods<IProductRepository>(dataContext => new ProductRepository(dataContext));
+            AddToCreationMethods<IOrderLineRepository>(dataContext => new OrderLineRepository(dataContext));
+            AddToCreationMethods<IOrderLineAdditionRepository>(dataContext => new OrderLineAdditionRepository(dataContext));
+            AddToCreationMethods<ICategoryRepository>(dataContext => new CategoryRepository(dataContext));
         }
         
     }

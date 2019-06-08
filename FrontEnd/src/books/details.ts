@@ -1,7 +1,7 @@
 import {LogManager, View, autoinject} from "aurelia-framework";
 import {RouteConfig, NavigationInstruction, Router} from "aurelia-router";
 import { IBook } from "interfaces/IBook";
-import { BooksService } from "services/books-service";
+import { OrderService } from "services/order-service";
 
 export var log = LogManager.getLogger('Books.Details');
 
@@ -12,7 +12,7 @@ export class Details {
 
   constructor(
     private router: Router,
-    private booksService: BooksService
+    private booksService: OrderService
   ) {
     log.debug('constructor');
   }

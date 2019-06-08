@@ -6,6 +6,7 @@ namespace Domain.Identity
 {
     public class AppUser :  IdentityUser<int>, IDomainEntity // PK type is int
     {
-        public ICollection<Book> Books { get; set; }
+
+        public List<Order> Orders { get; set; }
     }
 }
